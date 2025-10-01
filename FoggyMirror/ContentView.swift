@@ -64,6 +64,7 @@ struct ContentView: View {
     @State private var showEightBall = false
     @State private var showMazeBall = false
     @State private var showCircleTap = false
+    @State private var showRhythmTap = false
     
     var body: some View {
         ZStack {
@@ -286,6 +287,42 @@ struct ContentView: View {
                         .cornerRadius(20)
                         .shadow(color: Color.pink.opacity(0.2), radius: 8)
                         
+                        // Rhythm Tap Card
+                        VStack(spacing: 12) {
+                            Text("🎹")
+                                .font(.system(size: 45))
+                            
+                            Text("Rhythm Tap")
+                                .font(.system(size: 14, weight: .bold, design: .rounded))
+                                .foregroundColor(Color(red: 0.5, green: 0.4, blue: 0.7))
+                            
+                            Button(action: {
+                                showRhythmTap = true
+                            }) {
+                                Text("Start")
+                                    .font(.system(size: 14, weight: .bold, design: .rounded))
+                                    .foregroundColor(.white)
+                                    .padding(.horizontal, 20)
+                                    .padding(.vertical, 8)
+                                    .background(
+                                        LinearGradient(
+                                            colors: [
+                                                Color(red: 0.6, green: 0.4, blue: 0.9),
+                                                Color(red: 0.4, green: 0.6, blue: 1.0)
+                                            ],
+                                            startPoint: .leading,
+                                            endPoint: .trailing
+                                        )
+                                    )
+                                    .cornerRadius(15)
+                            }
+                        }
+                        .frame(width: 105)
+                        .padding(.vertical, 20)
+                        .background(Color.white.opacity(0.7))
+                        .cornerRadius(20)
+                        .shadow(color: Color.purple.opacity(0.2), radius: 8)
+                        
                         Spacer()
                     }
                 }
@@ -308,6 +345,9 @@ struct ContentView: View {
         }
         .fullScreenCover(isPresented: $showCircleTap) {
             CircleTapView()
+        }
+        .fullScreenCover(isPresented: $showRhythmTap) {
+            RhythmTapView()
         }
     }
 }
