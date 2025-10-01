@@ -65,6 +65,8 @@ struct ContentView: View {
     @State private var showMazeBall = false
     @State private var showCircleTap = false
     @State private var showRhythmTap = false
+    @State private var showEggBalance = false
+    @State private var showRocketLaunch = false
     
     var body: some View {
         ZStack {
@@ -325,6 +327,85 @@ struct ContentView: View {
                         
                         Spacer()
                     }
+                    
+                    // Third row - Egg Balance
+                    HStack {
+                        Spacer()
+                        
+                        // Egg Balance Card
+                        VStack(spacing: 12) {
+                            Text("🥚")
+                                .font(.system(size: 45))
+                            
+                            Text("Egg Balance")
+                                .font(.system(size: 14, weight: .bold, design: .rounded))
+                                .foregroundColor(Color(red: 0.5, green: 0.4, blue: 0.7))
+                            
+                            Button(action: {
+                                showEggBalance = true
+                            }) {
+                                Text("Start")
+                                    .font(.system(size: 14, weight: .bold, design: .rounded))
+                                    .foregroundColor(.white)
+                                    .padding(.horizontal, 20)
+                                    .padding(.vertical, 8)
+                                    .background(
+                                        LinearGradient(
+                                            colors: [
+                                                Color(red: 0.8, green: 0.6, blue: 0.3),
+                                                Color(red: 0.9, green: 0.7, blue: 0.4)
+                                            ],
+                                            startPoint: .leading,
+                                            endPoint: .trailing
+                                        )
+                                    )
+                                    .cornerRadius(15)
+                            }
+                        }
+                        .frame(width: 105)
+                        .padding(.vertical, 20)
+                        .background(Color.white.opacity(0.7))
+                        .cornerRadius(20)
+                        .shadow(color: Color.orange.opacity(0.2), radius: 8)
+                        
+                        // Rocket Launch Card
+                        VStack(spacing: 12) {
+                            Text("🚀")
+                                .font(.system(size: 45))
+                            
+                            Text("Rocket Launch")
+                                .font(.system(size: 14, weight: .bold, design: .rounded))
+                                .foregroundColor(Color(red: 0.5, green: 0.4, blue: 0.7))
+                            
+                            Button(action: {
+                                showRocketLaunch = true
+                            }) {
+                                Text("Start")
+                                    .font(.system(size: 14, weight: .bold, design: .rounded))
+                                    .foregroundColor(.white)
+                                    .padding(.horizontal, 20)
+                                    .padding(.vertical, 8)
+                                    .background(
+                                        LinearGradient(
+                                            colors: [
+                                                Color(red: 1.0, green: 0.4, blue: 0.3),
+                                                Color(red: 1.0, green: 0.6, blue: 0.2)
+                                            ],
+                                            startPoint: .leading,
+                                            endPoint: .trailing
+                                        )
+                                    )
+                                    .cornerRadius(15)
+                            }
+                        }
+                        .frame(width: 105)
+                        .padding(.vertical, 20)
+                        .background(Color.white.opacity(0.7))
+                        .cornerRadius(20)
+                        .shadow(color: Color.red.opacity(0.2), radius: 8)
+                        
+                        Spacer()
+                    }
                 }
                 
                 Spacer()
@@ -348,6 +429,12 @@ struct ContentView: View {
         }
         .fullScreenCover(isPresented: $showRhythmTap) {
             RhythmTapView()
+        }
+        .fullScreenCover(isPresented: $showEggBalance) {
+            EggBalanceView()
+        }
+        .fullScreenCover(isPresented: $showRocketLaunch) {
+            RocketLaunchView()
         }
     }
 }

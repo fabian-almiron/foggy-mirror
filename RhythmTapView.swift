@@ -29,6 +29,8 @@ struct RhythmTapView: View {
     @State private var bestScore: Int? = nil
     @State private var combo = 0
     @State private var audioPlayer: AVAudioPlayer?
+    @State private var timeRemaining = 30
+    @State private var gameTimer: Timer?
     
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
@@ -74,7 +76,7 @@ struct RhythmTapView: View {
                             .foregroundColor(.white.opacity(0.8))
                             .padding(.horizontal, 40)
                         
-                        Text("Don't miss or tap empty lanes!")
+                        Text("30 seconds • Don't miss or tap empty lanes!")
                             .font(.system(size: 16, weight: .regular, design: .rounded))
                             .foregroundColor(.white.opacity(0.6))
                         
@@ -106,7 +108,7 @@ struct RhythmTapView: View {
                 
             } else if gameState == .playing {
                 VStack(spacing: 0) {
-                    // Top bar with score and combo
+                    // Top bar with score, combo, and timer
                     HStack {
                         VStack(alignment: .leading, spacing: 5) {
                             Text("Score: \(score)")
@@ -121,6 +123,10 @@ struct RhythmTapView: View {
                         }
                         
                         Spacer()
+                        
+                        Text("⏱️ \(timeRemaining)")
+                            .font(.system(size: 24, weight: .bold, design: .rounded))
+                            .foregroundColor(timeRemaining <= 5 ? .red : .white)
                     }
                     .padding()
                     .background(Color.black.opacity(0.3))
@@ -287,10 +293,19 @@ struct RhythmTapView: View {
     private func startGame() {
         score = 0
         combo = 0
+        timeRemaining = 30
         tiles = []
         tappedTiles = []
         missedTiles = []
         gameState = .playing
+        
+        // Start game timer (countdown)
+        gameTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+            timeRemaining -= 1
+            if timeRemaining <= 0 {
+                endGame()
+            }
+        }
         
         // Start spawn timer (new tile every 0.6 seconds)
         spawnTimer = Timer.scheduledTimer(withTimeInterval: 0.6, repeats: true) { _ in
@@ -304,8 +319,10 @@ struct RhythmTapView: View {
     }
     
     private func stopGame() {
+        gameTimer?.invalidate()
         spawnTimer?.invalidate()
         updateTimer?.invalidate()
+        gameTimer = nil
         spawnTimer = nil
         updateTimer = nil
     }
@@ -343,13 +360,15 @@ struct RhythmTapView: View {
         }
         
         // Check for missed tiles (passed the tap zone)
-        for tile in tiles {
-            if !tappedTiles.contains(tile.id) && !missedTiles.contains(tile.id) {
-                if tile.y > screenHeight - tapZoneHeight + tileHeight {
-                    // Missed!
-                    missedTiles.insert(tile.id)
-                    combo = 0
-                    endGame()
+        if timeRemaining > 0 {
+            for tile in tiles {
+                if !tappedTiles.contains(tile.id) && !missedTiles.contains(tile.id) {
+                    if tile.y > screenHeight - tapZoneHeight + tileHeight {
+                        // Missed!
+                        missedTiles.insert(tile.id)
+                        combo = 0
+                        endGame()
+                    }
                 }
             }
         }

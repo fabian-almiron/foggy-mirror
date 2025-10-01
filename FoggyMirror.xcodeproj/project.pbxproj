@@ -9,10 +9,15 @@
 /* Begin PBXBuildFile section */
 		46701AA62E8DC81A008095F6 /* ZenGardenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46701AA52E8DC81A008095F6 /* ZenGardenView.swift */; };
 		46701AAE2E8DCB66008095F6 /* MagicEightBallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46701AAD2E8DCB66008095F6 /* MagicEightBallView.swift */; };
-		46701AB42E8DCE33008095F6 /* SnackCatcherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46701AB32E8DCE33008095F6 /* SnackCatcherView.swift */; };
 		46701ABE2E8DD354008095F6 /* MazeBallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46701ABD2E8DD354008095F6 /* MazeBallView.swift */; };
 		46701AC72E8DD61F008095F6 /* CircleTapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46701AC62E8DD61F008095F6 /* CircleTapView.swift */; };
-		46701AC92E8DD703008095F6 /* RhythmTapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46701AC82E8DD703008095F6 /* RhythmTapView.swift */; };
+		46701ACB2E8DD74E008095F6 /* CircleTapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46701ACA2E8DD74E008095F6 /* CircleTapView.swift */; };
+		46701ACD2E8DD764008095F6 /* MazeBallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46701ACC2E8DD764008095F6 /* MazeBallView.swift */; };
+		46701ACF2E8DD777008095F6 /* MagicEightBallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46701ACE2E8DD777008095F6 /* MagicEightBallView.swift */; };
+		46701AD12E8DD789008095F6 /* ZenGardenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46701AD02E8DD789008095F6 /* ZenGardenView.swift */; };
+		46701AD32E8DD82B008095F6 /* RhythmTapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46701AD22E8DD82B008095F6 /* RhythmTapView.swift */; };
+		46701AD52E8DD8D1008095F6 /* EggBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46701AD42E8DD8D1008095F6 /* EggBalanceView.swift */; };
+		46701AD72E8DD9DE008095F6 /* RocketLaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46701AD62E8DD9DE008095F6 /* RocketLaunchView.swift */; };
 		A1234567890123456789012A /* FoggyMirrorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890123456789012B /* FoggyMirrorApp.swift */; };
 		A1234567890123456789012C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890123456789012D /* ContentView.swift */; };
 		A1234567890123456789012E /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890123456789012F /* CameraView.swift */; };
@@ -26,10 +31,15 @@
 /* Begin PBXFileReference section */
 		46701AA52E8DC81A008095F6 /* ZenGardenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZenGardenView.swift; sourceTree = "<group>"; };
 		46701AAD2E8DCB66008095F6 /* MagicEightBallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicEightBallView.swift; sourceTree = "<group>"; };
-		46701AB32E8DCE33008095F6 /* SnackCatcherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackCatcherView.swift; sourceTree = "<group>"; };
 		46701ABD2E8DD354008095F6 /* MazeBallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeBallView.swift; sourceTree = "<group>"; };
 		46701AC62E8DD61F008095F6 /* CircleTapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTapView.swift; sourceTree = "<group>"; };
-		46701AC82E8DD703008095F6 /* RhythmTapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RhythmTapView.swift; sourceTree = "<group>"; };
+		46701ACA2E8DD74E008095F6 /* CircleTapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTapView.swift; sourceTree = "<group>"; };
+		46701ACC2E8DD764008095F6 /* MazeBallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeBallView.swift; sourceTree = "<group>"; };
+		46701ACE2E8DD777008095F6 /* MagicEightBallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicEightBallView.swift; sourceTree = "<group>"; };
+		46701AD02E8DD789008095F6 /* ZenGardenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZenGardenView.swift; sourceTree = "<group>"; };
+		46701AD22E8DD82B008095F6 /* RhythmTapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RhythmTapView.swift; sourceTree = "<group>"; };
+		46701AD42E8DD8D1008095F6 /* EggBalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggBalanceView.swift; sourceTree = "<group>"; };
+		46701AD62E8DD9DE008095F6 /* RocketLaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchView.swift; sourceTree = "<group>"; };
 		A1234567890123456789012B /* FoggyMirrorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoggyMirrorApp.swift; sourceTree = "<group>"; };
 		A1234567890123456789012D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A1234567890123456789012F /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
@@ -80,10 +90,15 @@
 		A1234567890123456789015D = {
 			isa = PBXGroup;
 			children = (
-				46701AC82E8DD703008095F6 /* RhythmTapView.swift */,
+				46701AD62E8DD9DE008095F6 /* RocketLaunchView.swift */,
+				46701AD42E8DD8D1008095F6 /* EggBalanceView.swift */,
+				46701AD22E8DD82B008095F6 /* RhythmTapView.swift */,
+				46701AD02E8DD789008095F6 /* ZenGardenView.swift */,
+				46701ACE2E8DD777008095F6 /* MagicEightBallView.swift */,
+				46701ACC2E8DD764008095F6 /* MazeBallView.swift */,
+				46701ACA2E8DD74E008095F6 /* CircleTapView.swift */,
 				46701AC62E8DD61F008095F6 /* CircleTapView.swift */,
 				46701ABD2E8DD354008095F6 /* MazeBallView.swift */,
-				46701AB32E8DCE33008095F6 /* SnackCatcherView.swift */,
 				46701AAD2E8DCB66008095F6 /* MagicEightBallView.swift */,
 				46701AA52E8DC81A008095F6 /* ZenGardenView.swift */,
 				A1234567890123456789015B /* FoggyMirror */,
@@ -169,18 +184,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46701AB42E8DCE33008095F6 /* SnackCatcherView.swift in Sources */,
 				46701AC72E8DD61F008095F6 /* CircleTapView.swift in Sources */,
 				A1234567890123456789012C /* ContentView.swift in Sources */,
 				46701AA62E8DC81A008095F6 /* ZenGardenView.swift in Sources */,
+				46701AD52E8DD8D1008095F6 /* EggBalanceView.swift in Sources */,
 				A1234567890123456789012E /* CameraView.swift in Sources */,
 				46701AAE2E8DCB66008095F6 /* MagicEightBallView.swift in Sources */,
-				46701AC92E8DD703008095F6 /* RhythmTapView.swift in Sources */,
 				A1234567890123456789013A /* MirrorView.swift in Sources */,
+				46701AD72E8DD9DE008095F6 /* RocketLaunchView.swift in Sources */,
+				46701AD32E8DD82B008095F6 /* RhythmTapView.swift in Sources */,
 				A1234567890123456789013C /* AudioManager.swift in Sources */,
+				46701AD12E8DD789008095F6 /* ZenGardenView.swift in Sources */,
 				A1234567890123456789013E /* DrawingCanvas.swift in Sources */,
+				46701ACF2E8DD777008095F6 /* MagicEightBallView.swift in Sources */,
 				46701ABE2E8DD354008095F6 /* MazeBallView.swift in Sources */,
 				A1234567890123456789012A /* FoggyMirrorApp.swift in Sources */,
+				46701ACD2E8DD764008095F6 /* MazeBallView.swift in Sources */,
+				46701ACB2E8DD74E008095F6 /* CircleTapView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
