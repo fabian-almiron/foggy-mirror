@@ -62,6 +62,8 @@ struct ContentView: View {
     @State private var showMirror = false
     @State private var showZenGarden = false
     @State private var showEightBall = false
+    @State private var showMazeBall = false
+    @State private var showCircleTap = false
     
     var body: some View {
         ZStack {
@@ -81,25 +83,19 @@ struct ContentView: View {
                 Spacer()
                 
                 // Title
-                VStack(spacing: 10) {
-                    Text("✨ Mindful Moments ✨")
-                        .font(.system(size: 36, weight: .bold, design: .rounded))
-                        .foregroundStyle(
-                            LinearGradient(
-                                colors: [
-                                    Color(red: 0.6, green: 0.4, blue: 0.8),
-                                    Color(red: 0.4, green: 0.6, blue: 0.9)
-                                ],
-                                startPoint: .leading,
-                                endPoint: .trailing
-                            )
+                Text("r u bored?")
+                    .font(.custom("Chalkboard SE", size: 48))
+                    .fontWeight(.bold)
+                    .foregroundStyle(
+                        LinearGradient(
+                            colors: [
+                                Color(red: 0.6, green: 0.4, blue: 0.8),
+                                Color(red: 0.4, green: 0.6, blue: 0.9)
+                            ],
+                            startPoint: .leading,
+                            endPoint: .trailing
                         )
-                    
-                    Text("Choose your relaxing experience")
-                        .font(.system(size: 16, weight: .medium, design: .rounded))
-                        .foregroundColor(Color(red: 0.5, green: 0.4, blue: 0.7))
-                        .multilineTextAlignment(.center)
-                }
+                    )
                 .padding(.top, 40)
                 
                 // Experience cards - 3 in a row
@@ -213,6 +209,85 @@ struct ContentView: View {
                         .cornerRadius(20)
                         .shadow(color: Color.black.opacity(0.2), radius: 8)
                     }
+                    
+                    // Add Maze Ball below
+                    HStack {
+                        Spacer()
+                        
+                        // Maze Ball Card
+                        VStack(spacing: 12) {
+                            Text("🎯")
+                                .font(.system(size: 45))
+                            
+                            Text("Maze Ball")
+                                .font(.system(size: 14, weight: .bold, design: .rounded))
+                                .foregroundColor(Color(red: 0.5, green: 0.4, blue: 0.7))
+                            
+                            Button(action: {
+                                showMazeBall = true
+                            }) {
+                                Text("Start")
+                                    .font(.system(size: 14, weight: .bold, design: .rounded))
+                                    .foregroundColor(.white)
+                                    .padding(.horizontal, 20)
+                                    .padding(.vertical, 8)
+                                    .background(
+                                        LinearGradient(
+                                            colors: [
+                                                Color(red: 0.3, green: 0.7, blue: 0.5),
+                                                Color(red: 0.2, green: 0.5, blue: 0.7)
+                                            ],
+                                            startPoint: .leading,
+                                            endPoint: .trailing
+                                        )
+                                    )
+                                    .cornerRadius(15)
+                            }
+                        }
+                        .frame(width: 105)
+                        .padding(.vertical, 20)
+                        .background(Color.white.opacity(0.7))
+                        .cornerRadius(20)
+                        .shadow(color: Color.blue.opacity(0.2), radius: 8)
+                        
+                        // Balloon Pop Card
+                        VStack(spacing: 12) {
+                            Text("🎈")
+                                .font(.system(size: 45))
+                            
+                            Text("Balloon Pop")
+                                .font(.system(size: 14, weight: .bold, design: .rounded))
+                                .foregroundColor(Color(red: 0.5, green: 0.4, blue: 0.7))
+                            
+                            Button(action: {
+                                showCircleTap = true
+                            }) {
+                                Text("Start")
+                                    .font(.system(size: 14, weight: .bold, design: .rounded))
+                                    .foregroundColor(.white)
+                                    .padding(.horizontal, 20)
+                                    .padding(.vertical, 8)
+                                    .background(
+                                        LinearGradient(
+                                            colors: [
+                                                Color(red: 0.8, green: 0.3, blue: 0.5),
+                                                Color(red: 0.6, green: 0.4, blue: 0.8)
+                                            ],
+                                            startPoint: .leading,
+                                            endPoint: .trailing
+                                        )
+                                    )
+                                    .cornerRadius(15)
+                            }
+                        }
+                        .frame(width: 105)
+                        .padding(.vertical, 20)
+                        .background(Color.white.opacity(0.7))
+                        .cornerRadius(20)
+                        .shadow(color: Color.pink.opacity(0.2), radius: 8)
+                        
+                        Spacer()
+                    }
                 }
                 
                 Spacer()
@@ -227,6 +302,12 @@ struct ContentView: View {
         }
         .fullScreenCover(isPresented: $showEightBall) {
             MagicEightBallView()
+        }
+        .fullScreenCover(isPresented: $showMazeBall) {
+            MazeBallView()
+        }
+        .fullScreenCover(isPresented: $showCircleTap) {
+            CircleTapView()
         }
     }
 }

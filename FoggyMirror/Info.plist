@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSCameraUsageDescription</key>
-	<string>This app uses the camera to create a mirror effect for the fog simulation.</string>
+	<string>We need camera access to create a mirror effect for the fog simulation.</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>We need microphone access to detect when you blow on the screen to create fog effects.</string>
 	<key>UIRequiresFullScreen</key>
